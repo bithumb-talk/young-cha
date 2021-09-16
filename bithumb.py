@@ -14,10 +14,11 @@ if res.ok:
     with open('bithumb.csv','w',encoding='utf-8') as f:
         for coin in coins:
             names = coin.select('td:nth-child(1) > div > p > a > strong')
-            symbols = coin.select('td:nth-child(1) > div > p > a > span')
-            for name_obj, symbol_obj in zip(names,symbols):
-                name = re.sub('신규 공시', '', name_obj.text.strip())
-                symbol = symbol_obj.text.strip().replace('/','_')
-                if symbol.endswith('KRW'):
-                    f.write(f'{name},{symbol}\n')
+            markets = coin.select('td:nth-child(1) > div > p > a > span')
+            for name_obj, market_obj in zip(names,markets):
+                name = re.sub(' 신규 공시', '', name_obj.text.strip())
+                market = market_obj.text.strip().replace('/','_')
+                symbol = market_obj.text.strip().split('/')[0]
+                if market.endswith('KRW'):
+                    f.write(f'{symbol},{market},{name}\n')
 
