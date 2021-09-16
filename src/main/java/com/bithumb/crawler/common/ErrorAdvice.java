@@ -6,13 +6,13 @@ import java.util.Map;
 import com.bithumb.crawler.common.response.ApiResponse;
 import com.bithumb.crawler.common.response.StatusCode;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.dao.DuplicateKeyException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.FieldError;
 import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
+import org.yaml.snakeyaml.constructor.DuplicateKeyException;
 
 @Slf4j
 @RestControllerAdvice
