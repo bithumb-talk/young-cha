@@ -11,6 +11,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 @Document(collection = "coins")
 public class Coin {
     @Id
+    private long id;
     private String symbol;
     private String market;
     private String korean;
