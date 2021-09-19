@@ -3,9 +3,11 @@ from bs4 import BeautifulSoup
 import re
 from pymongo import MongoClient
 
-my_client = MongoClient("mongodb://localhost:27017")
+my_client = MongoClient("mongodb://localhost:9091")
 mydb = my_client['test']
+mydb['coins'].drop()
 mycol = mydb['coins']
+
 
 print(my_client.list_database_names())
 url = 'https://www.bithumb.com/'
