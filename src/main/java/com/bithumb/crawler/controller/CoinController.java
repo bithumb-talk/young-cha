@@ -1,7 +1,10 @@
 package com.bithumb.crawler.controller;
 
 import com.bithumb.crawler.common.response.ApiResponse;
+import com.bithumb.crawler.common.response.StatusCode;
+import com.bithumb.crawler.common.response.SuccessCode;
 import com.bithumb.crawler.domain.Coin;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -20,7 +23,7 @@ import java.util.StringTokenizer;
 @RestController
 public class CoinController {
     @GetMapping("/coins")
-    public ResponseEntity<Flux<List<Coin>>> getCoins() throws IOException {
+    public ResponseEntity<?> getCoins() throws IOException {
         List<Coin> coins = new ArrayList<>();
         BufferedReader reader = new BufferedReader(
                 new FileReader("bithumb.csv")
@@ -35,8 +38,9 @@ public class CoinController {
             coin.setKorean(st.nextToken());
             coins.add(coin);
         }
+        ApiResponse apiResponse = ApiResponse.responseData(StatusCode.SUCCESS, SuccessCode.COIN_FINDALL_SUCCESS.getMessage(),coins);
         System.out.println(coins);
         reader.close();
-        return ResponseEntity.ok(Flux.just(coins));
+        return ResponseEntity.status(HttpStatus.OK).body(apiResponse);
     }
 }

@@ -1,7 +1,13 @@
 import requests
 from bs4 import BeautifulSoup
 import re
+from pymongo import MongoClient
 
+my_client = MongoClient("mongodb://localhost:27017")
+mydb = my_client['test']
+mycol = mydb['coins']
+
+print(my_client.list_database_names())
 url = 'https://www.bithumb.com/'
 req_header = {'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/93.0.4577.82 Safari/537.36'}
 res = requests.get(url, headers=req_header)
@@ -21,4 +27,5 @@ if res.ok:
                 symbol = market_obj.text.strip().split('/')[0]
                 if market.endswith('KRW'):
                     f.write(f'{symbol},{market},{name}\n')
+                    mycol.insert_one({"symbol":symbol,"market":market,"korean":name})
 
