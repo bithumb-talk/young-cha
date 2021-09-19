@@ -1,17 +1,19 @@
 package com.bithumb.interest.controller;
 
-import com.bithumb.interest.domain.Coin;
+import com.bithumb.coin.domain.Coin;
+import com.bithumb.coin.repository.CoinRepository;
+import com.bithumb.common.response.ApiResponse;
+import com.bithumb.common.response.ErrorCode;
+import com.bithumb.common.response.StatusCode;
+import com.bithumb.common.response.SuccessCode;
+import com.bithumb.interest.controller.dto.InterestDto;
 import com.bithumb.interest.domain.Interest;
 import com.bithumb.interest.repository.InterestRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import reactor.core.publisher.Flux;
-import reactor.core.publisher.Mono;
 
-import java.util.ArrayList;
-import java.util.List;
 
 @RequestMapping
 @RequiredArgsConstructor
@@ -19,47 +21,56 @@ import java.util.List;
 @CrossOrigin(origins = "*", allowCredentials = "false")
 public class InterestController {
     private final InterestRepository interestRepository;
+    private final CoinRepository coinRepository;
 
     @GetMapping("/interests/{user-id}")
-    public Mono<ResponseEntity<Interest>> getInterests(@PathVariable(value = "user-id") long id){
-        return interestRepository.findById(id).map(i -> ResponseEntity.ok(i));
+    public ResponseEntity<?> getInterests(@PathVariable(value = "user-id") long userId){
+        ApiResponse apiResponse = ApiResponse.responseMessage(StatusCode.SUCCESS,
+                SuccessCode.INTEREST_FINDALL_SUCCESS.getMessage());
+        apiResponse.setData(interestRepository.findByUserId(userId).collectList().block());
+        return ResponseEntity.status(HttpStatus.OK).body(apiResponse);
     }
 
-//        ApiResponse apiResponse = ApiResponse.responseMessage(StatusCode.FAIL,
-//                ErrorCode.ID_NOT_EXIST.getMessage());
-//        return ResponseEntity.status(HttpStatus.NOT_FOUND).body(apiResponse);
-
-
     @PostMapping("/interest/{user-id}")
-    public Mono<ResponseEntity<Interest>> createInterest(@PathVariable(value = "user-id") long id, @RequestBody Coin coin){
-        boolean exsist =  interestRepository.existsById(id).block().booleanValue();
-        if (!exsist) {
-            List<Coin> defaultCoins = new ArrayList<>();
-            defaultCoins.add(coin);
-            Interest interest = new Interest(id,defaultCoins);
-            return interestRepository.save(interest).map( j -> { return ResponseEntity.ok(j);})
-                    .defaultIfEmpty(new ResponseEntity<>(HttpStatus.NOT_FOUND));
+    public ResponseEntity<?> createInterest(@PathVariable(value = "user-id") long userId, @RequestBody InterestDto symbol){
+        Boolean exsitsCoin = coinRepository.existsCoinBySymbol(symbol.getSymbol()).block().booleanValue();
+        ApiResponse apiResponse = ApiResponse.responseMessage(StatusCode.SUCCESS,
+                SuccessCode.INTEREST_CREATE_SUCCESS.getMessage());
+        if (!exsitsCoin) {
+            apiResponse.setMessage(ErrorCode.COIN_NOT_EXISTS.getMessage());
+            apiResponse.setStatus(StatusCode.FAIL);
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(apiResponse);
         }
-        return interestRepository.findById(id).flatMap(i -> {
-            if (i.getCoins().contains(coin)) {
-                return null;
-            }
-            List<Coin> coins = new ArrayList<>();
-            coins.add(coin);
-            coins.addAll(i.getCoins());
-            i.setCoins(coins);
-            return interestRepository.save(i).map( j -> { return ResponseEntity.ok(j);})
-                    .defaultIfEmpty(new ResponseEntity<>(HttpStatus.NOT_FOUND));
-        });
+
+        Boolean existsDB = interestRepository.existsInterestBySymbolAndUserId(symbol.getSymbol(),userId).block().booleanValue();
+        if (existsDB) {
+            apiResponse.setStatus(StatusCode.ERROR);
+            apiResponse.setMessage(ErrorCode.ALREADY_EXISTS);
+            return ResponseEntity.status(HttpStatus.ALREADY_REPORTED).body(apiResponse);
+        }
+        Coin coin = coinRepository.findRegexBySymbol(symbol.getSymbol()).block();
+
+        Interest interest = new Interest();
+        interest.setUserId(userId);
+        interest.setKorean(coin.getKorean());
+        interest.setMarket(coin.getMarket());
+        interest.setSymbol(symbol.getSymbol());
+        apiResponse.setData(interestRepository.save(interest).block());
+        return ResponseEntity.status(HttpStatus.OK).body(apiResponse);
     }
 
     @DeleteMapping("/interest/{user-id}")
-    public Mono<ResponseEntity<Interest>> deleteInterest(@PathVariable(value = "user-id") long id, @RequestBody Coin coin) {
-        List<Coin> coins = interestRepository.findById(id).block().getCoins();
-        coins.remove(coin);
-
-        return interestRepository.save(new Interest(id, coins)).map(j -> {return ResponseEntity.ok(j);} )
-                .defaultIfEmpty(new ResponseEntity<>(HttpStatus.NOT_FOUND));
+    public ResponseEntity<?> deleteInterest(@PathVariable(value = "user-id") long userId, @RequestBody InterestDto symbol) {
+        ApiResponse apiResponse = ApiResponse.responseMessage(StatusCode.SUCCESS,
+                SuccessCode.INTEREST_DELETE_SUCCESS.getMessage());
+        Boolean exists = interestRepository.existsInterestBySymbolAndUserId(symbol.getSymbol(), userId).block().booleanValue();
+        if (!exists) {
+            apiResponse.setStatus(StatusCode.FAIL);
+            apiResponse.setMessage(ErrorCode.INTEREST_NOT_EXISTS);
+            return ResponseEntity.status(HttpStatus.ALREADY_REPORTED).body(apiResponse);
+        }
+        apiResponse.setData(interestRepository.deleteInterestBySymbolAndUserId(symbol.getSymbol(),userId).block());
+        return ResponseEntity.status(HttpStatus.OK).body(apiResponse);
 
     }
 }
