@@ -1,24 +1,21 @@
-package com.bithumb.interest.domain;
+package com.bithumb.coin.domain;
 
-import lombok.*;
+import lombok.Data;
+import lombok.EqualsAndHashCode;
+import lombok.RequiredArgsConstructor;
+import lombok.ToString;
 import org.bson.types.ObjectId;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
-import java.io.Serializable;
-import java.util.List;
-
 @Data
 @RequiredArgsConstructor
 @EqualsAndHashCode @ToString
-@AllArgsConstructor
-@Document(collection = "interests")
-public class Interest {
+@Document(collection = "coins")
+public class Coin {
     @Id
     private ObjectId id;
     private String symbol;
     private String korean;
     private String market;
-    private long userId;
-
 }
