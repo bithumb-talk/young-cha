@@ -1,0 +1,21 @@
+version: '3.7'
+services:
+  mongo:
+    image: "mongo:4.4.3"
+    container_name: mongo
+    restart: always
+    ports:
+      - 9093:27017
+    environment:
+      - MONGO_DATA_DIR=/data/db
+      - MONGO_LOG_DIR=/dev/null
+    volumes:
+      - ./data/db:/data/db
+  app:
+    build: .
+    restart: always
+    ports:
+      - 8080:8080
+    depends_on:
+      - mongo
+
