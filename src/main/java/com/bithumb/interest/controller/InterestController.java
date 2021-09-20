@@ -9,15 +9,18 @@ import com.bithumb.common.response.SuccessCode;
 import com.bithumb.interest.controller.dto.InterestDto;
 import com.bithumb.interest.domain.Interest;
 import com.bithumb.interest.repository.InterestRepository;
+import io.swagger.annotations.Api;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 
+
 @RequestMapping
 @RequiredArgsConstructor
 @RestController
+@Api
 @CrossOrigin(origins = "*", allowCredentials = "false")
 public class InterestController {
     private final InterestRepository interestRepository;

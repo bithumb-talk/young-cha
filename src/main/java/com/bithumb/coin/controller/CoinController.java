@@ -7,12 +7,14 @@ import com.bithumb.common.response.ApiResponse;
 import com.bithumb.common.response.ErrorCode;
 import com.bithumb.common.response.StatusCode;
 import com.bithumb.common.response.SuccessCode;
+import io.swagger.annotations.Api;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 
+@Api
 @RequiredArgsConstructor
 @RestController
 @CrossOrigin(origins = "*", allowCredentials = "false")

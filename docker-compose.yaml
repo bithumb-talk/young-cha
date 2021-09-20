@@ -5,7 +5,7 @@ services:
     container_name: mongo
     restart: always
     ports:
-      - 27017:27017
+      - 9093:27017
     environment:
       - MONGO_DATA_DIR=/data/db
       - MONGO_LOG_DIR=/dev/null
