@@ -3,7 +3,7 @@ from bs4 import BeautifulSoup
 import re
 from pymongo import MongoClient
 
-my_client = MongoClient("mongodb://localhost:9093")
+my_client = MongoClient("mongodb://localhost:27018")
 mydb = my_client['test']
 mydb['coins'].drop()
 mycol = mydb['coins']
