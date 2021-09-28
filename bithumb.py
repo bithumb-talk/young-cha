@@ -1,12 +1,12 @@
 import requests
 from bs4 import BeautifulSoup
 import re
-from pymongo import MongoClient
+#from pymongo import MongoClient
 
-my_client = MongoClient("mongodb://localhost:27018")
-mydb = my_client['test']
-mydb['coins'].drop()
-mycol = mydb['coins']
+#my_client = MongoClient("mongodb://localhost:27018")
+#mydb = my_client['test']
+#mydb['coins'].drop()
+#mycol = mydb['coins']
 
 
 url = 'https://www.bithumb.com/'
@@ -18,14 +18,16 @@ if res.ok:
     soup = BeautifulSoup(html, 'html.parser')
     coins = soup.select('#sise_list > tbody > tr')
 
-    for coin in coins:
-        names = coin.select('td:nth-child(1) > div > p > a > strong')
-        markets = coin.select('td:nth-child(1) > div > p > a > span')
-        for name_obj, market_obj in zip(names,markets):
-            name = re.sub(' 신규 공시', '', name_obj.text.strip())
-            market = market_obj.text.strip().replace('/','_')
-            symbol = market_obj.text.strip().split('/')[0]
-            if market.endswith('KRW'):
-                mycol.insert_one({"symbol":symbol,"market":market,"korean":name})
+    with open('bithumb.csv','w',encoding='utf-8') as f:
+        for coin in coins:
+            koreans = coin.select('td:nth-child(1) > div > p > a > strong')
+            markets = coin.select('td:nth-child(1) > div > p > a > span')
+            for korean_obj, market_obj in zip(koreans,markets):
+                korean = re.sub(' 신규 공시', '', korean_obj.text.strip())
+                market = market_obj.text.strip().replace('/','_')
+                symbol = market_obj.text.strip().split('/')[0]
+                if market.endswith('KRW'):
+                    f.write(f'{symbol},{market},{korean}\n')
+                    #mycol.insert_one({"symbol":symbol,"market":market,"korean":name})
 print("Create Coins")
 
