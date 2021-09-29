@@ -1,0 +1,902 @@
+{
+	"BTC": {
+		"symbol": "BTC",
+		"market": "BTC_KRW",
+		"korean": "\ube44\ud2b8\ucf54\uc778"
+	},
+	"ETH": {
+		"symbol": "ETH",
+		"market": "ETH_KRW",
+		"korean": "\uc774\ub354\ub9ac\uc6c0"
+	},
+	"XEC": {
+		"symbol": "XEC",
+		"market": "XEC_KRW",
+		"korean": "\uc774\uce90\uc2dc"
+	},
+	"XRP": {
+		"symbol": "XRP",
+		"market": "XRP_KRW",
+		"korean": "\ub9ac\ud50c"
+	},
+	"BIOT": {
+		"symbol": "BIOT",
+		"market": "BIOT_KRW",
+		"korean": "\ubc14\uc774\uc624\ud328\uc2a4\ud3ec\ud2b8"
+	},
+	"DOGE": {
+		"symbol": "DOGE",
+		"market": "DOGE_KRW",
+		"korean": "\ub3c4\uc9c0\ucf54\uc778"
+	},
+	"DOT": {
+		"symbol": "DOT",
+		"market": "DOT_KRW",
+		"korean": "\ud3f4\uce74\ub2f7"
+	},
+	"XLM": {
+		"symbol": "XLM",
+		"market": "XLM_KRW",
+		"korean": "\uc2a4\ud154\ub77c\ub8e8\uba58"
+	},
+	"UNI": {
+		"symbol": "UNI",
+		"market": "UNI_KRW",
+		"korean": "\uc720\ub2c8\uc2a4\uc651"
+	},
+	"WEMIX": {
+		"symbol": "WEMIX",
+		"market": "WEMIX_KRW",
+		"korean": "\uc704\ubbf9\uc2a4"
+	},
+	"LF": {
+		"symbol": "LF",
+		"market": "LF_KRW",
+		"korean": "\ub9c1\ud06c\ud50c\ub85c\uc6b0"
+	},
+	"BNB": {
+		"symbol": "BNB",
+		"market": "BNB_KRW",
+		"korean": "\ubc14\uc774\ub0b8\uc2a4\ucf54\uc778"
+	},
+	"LUNA": {
+		"symbol": "LUNA",
+		"market": "LUNA_KRW",
+		"korean": "\ub8e8\ub098"
+	},
+	"XNO": {
+		"symbol": "XNO",
+		"market": "XNO_KRW",
+		"korean": "\uc81c\ub178\ud1a0\ud070"
+	},
+	"ADA": {
+		"symbol": "ADA",
+		"market": "ADA_KRW",
+		"korean": "\uc5d0\uc774\ub2e4"
+	},
+	"KLAY": {
+		"symbol": "KLAY",
+		"market": "KLAY_KRW",
+		"korean": "\ud074\ub808\uc774\ud2bc"
+	},
+	"SOL": {
+		"symbol": "SOL",
+		"market": "SOL_KRW",
+		"korean": "\uc194\ub77c\ub098"
+	},
+	"EOS": {
+		"symbol": "EOS",
+		"market": "EOS_KRW",
+		"korean": "\uc774\uc624\uc2a4"
+	},
+	"HDAC": {
+		"symbol": "HDAC",
+		"market": "HDAC_KRW",
+		"korean": "\uc5d0\uc774\uce58\ub2e5"
+	},
+	"ETC": {
+		"symbol": "ETC",
+		"market": "ETC_KRW",
+		"korean": "\uc774\ub354\ub9ac\uc6c0 \ud074\ub798\uc2dd"
+	},
+	"LTC": {
+		"symbol": "LTC",
+		"market": "LTC_KRW",
+		"korean": "\ub77c\uc774\ud2b8\ucf54\uc778"
+	},
+	"ATOM": {
+		"symbol": "ATOM",
+		"market": "ATOM_KRW",
+		"korean": "\ucf54\uc2a4\ubaa8\uc2a4"
+	},
+	"MSB": {
+		"symbol": "MSB",
+		"market": "MSB_KRW",
+		"korean": "\ubbf8\uc2a4\ube14\ub85d"
+	},
+	"OMG": {
+		"symbol": "OMG",
+		"market": "OMG_KRW",
+		"korean": "\uc624\ubbf8\uc138\uace0"
+	},
+	"ANW": {
+		"symbol": "ANW",
+		"market": "ANW_KRW",
+		"korean": "\uc575\ucee4\ub274\ub7f4\uc6d4\ub4dc"
+	},
+	"LINK": {
+		"symbol": "LINK",
+		"market": "LINK_KRW",
+		"korean": "\uccb4\uc778\ub9c1\ud06c"
+	},
+	"BCH": {
+		"symbol": "BCH",
+		"market": "BCH_KRW",
+		"korean": "\ube44\ud2b8\ucf54\uc778 \uce90\uc2dc"
+	},
+	"TRX": {
+		"symbol": "TRX",
+		"market": "TRX_KRW",
+		"korean": "\ud2b8\ub860"
+	},
+	"ASM": {
+		"symbol": "ASM",
+		"market": "ASM_KRW",
+		"korean": "\uc5b4\uc148\ube14\ud504\ub85c\ud1a0\ucf5c"
+	},
+	"QTUM": {
+		"symbol": "QTUM",
+		"market": "QTUM_KRW",
+		"korean": "\ud000\ud140"
+	},
+	"CELR": {
+		"symbol": "CELR",
+		"market": "CELR_KRW",
+		"korean": "\uc140\ub7ec\ub124\ud2b8\uc6cc\ud06c"
+	},
+	"AXS": {
+		"symbol": "AXS",
+		"market": "AXS_KRW",
+		"korean": "\uc5d1\uc2dc\uc778\ud53c\ub2c8\ud2f0"
+	},
+	"VET": {
+		"symbol": "VET",
+		"market": "VET_KRW",
+		"korean": "\ube44\uccb4\uc778"
+	},
+	"XTZ": {
+		"symbol": "XTZ",
+		"market": "XTZ_KRW",
+		"korean": "\ud14c\uc870\uc2a4"
+	},
+	"ALICE": {
+		"symbol": "ALICE",
+		"market": "ALICE_KRW",
+		"korean": "\ub9c8\uc774\ub124\uc774\ubc84\uc568\ub9ac\uc2a4"
+	},
+	"LOOM": {
+		"symbol": "LOOM",
+		"market": "LOOM_KRW",
+		"korean": "\ub8f8\ub124\ud2b8\uc6cc\ud06c"
+	},
+	"ANV": {
+		"symbol": "ANV",
+		"market": "ANV_KRW",
+		"korean": "\uc560\ub2c8\ubc84\uc2a4"
+	},
+	"SRM": {
+		"symbol": "SRM",
+		"market": "SRM_KRW",
+		"korean": "\uc138\ub7fc"
+	},
+	"MVC": {
+		"symbol": "MVC",
+		"market": "MVC_KRW",
+		"korean": "\ub9c8\uc77c\ubc8c\uc2a4"
+	},
+	"BTT": {
+		"symbol": "BTT",
+		"market": "BTT_KRW",
+		"korean": "\ube44\ud2b8\ud1a0\ub80c\ud2b8"
+	},
+	"BTG": {
+		"symbol": "BTG",
+		"market": "BTG_KRW",
+		"korean": "\ube44\ud2b8\ucf54\uc778 \uace8\ub4dc"
+	},
+	"NU": {
+		"symbol": "NU",
+		"market": "NU_KRW",
+		"korean": "\ub204\uc0ac\uc774\ud37c"
+	},
+	"BASIC": {
+		"symbol": "BASIC",
+		"market": "BASIC_KRW",
+		"korean": "\ubca0\uc774\uc9c1"
+	},
+	"IOST": {
+		"symbol": "IOST",
+		"market": "IOST_KRW",
+		"korean": "\uc774\uc624\uc2a4\ud2b8"
+	},
+	"DVI": {
+		"symbol": "DVI",
+		"market": "DVI_KRW",
+		"korean": "\ub514\ube44\uc804"
+	},
+	"VELO": {
+		"symbol": "VELO",
+		"market": "VELO_KRW",
+		"korean": "\ubca8\ub85c\ud504\ub85c\ud1a0\ucf5c"
+	},
+	"AMO": {
+		"symbol": "AMO",
+		"market": "AMO_KRW",
+		"korean": "\uc544\ubaa8\ucf54\uc778"
+	},
+	"SXP": {
+		"symbol": "SXP",
+		"market": "SXP_KRW",
+		"korean": "\uc2a4\uc640\uc774\ud504"
+	},
+	"SAND": {
+		"symbol": "SAND",
+		"market": "SAND_KRW",
+		"korean": "\uc0cc\ub4dc\ubc15\uc2a4"
+	},
+	"BSV": {
+		"symbol": "BSV",
+		"market": "BSV_KRW",
+		"korean": "\ube44\ud2b8\ucf54\uc778\uc5d0\uc2a4\ube0c\uc774"
+	},
+	"AERGO": {
+		"symbol": "AERGO",
+		"market": "AERGO_KRW",
+		"korean": "\uc544\ub974\uace0"
+	},
+	"ALGO": {
+		"symbol": "ALGO",
+		"market": "ALGO_KRW",
+		"korean": "\uc54c\uace0\ub79c\ub4dc"
+	},
+	"ONG": {
+		"symbol": "ONG",
+		"market": "ONG_KRW",
+		"korean": "\uc628\ud1a8\ub85c\uc9c0\uac00\uc2a4"
+	},
+	"QTCON": {
+		"symbol": "QTCON",
+		"market": "QTCON_KRW",
+		"korean": "\ud034\uc988\ud1a1"
+	},
+	"MLK": {
+		"symbol": "MLK",
+		"market": "MLK_KRW",
+		"korean": "\ubc00\ud06c"
+	},
+	"PUNDIX": {
+		"symbol": "PUNDIX",
+		"market": "PUNDIX_KRW",
+		"korean": "\ud380\ub514\uc5d1\uc2a4"
+	},
+	"XEM": {
+		"symbol": "XEM",
+		"market": "XEM_KRW",
+		"korean": "\ub134"
+	},
+	"REN": {
+		"symbol": "REN",
+		"market": "REN_KRW",
+		"korean": "\ub80c"
+	},
+	"THETA": {
+		"symbol": "THETA",
+		"market": "THETA_KRW",
+		"korean": "\uc384\ud0c0\ud1a0\ud070"
+	},
+	"MTL": {
+		"symbol": "MTL",
+		"market": "MTL_KRW",
+		"korean": "\uba54\ud0c8"
+	},
+	"ANKR": {
+		"symbol": "ANKR",
+		"market": "ANKR_KRW",
+		"korean": "\uc575\ucee4"
+	},
+	"MIX": {
+		"symbol": "MIX",
+		"market": "MIX_KRW",
+		"korean": "\ubbf9\uc2a4\ub9c8\ube14"
+	},
+	"YFI": {
+		"symbol": "YFI",
+		"market": "YFI_KRW",
+		"korean": "\uc5f0\ud30c\uc774\ub0b8\uc2a4"
+	},
+	"META": {
+		"symbol": "META",
+		"market": "META_KRW",
+		"korean": "\uba54\ud0c0\ub514\uc6c0"
+	},
+	"MANA": {
+		"symbol": "MANA",
+		"market": "MANA_KRW",
+		"korean": "\ub514\uc13c\ud2b8\ub7f4\ub79c\ub4dc"
+	},
+	"GOM2": {
+		"symbol": "GOM2",
+		"market": "GOM2_KRW",
+		"korean": "\uace0\uba38\ub2c82"
+	},
+	"BCD": {
+		"symbol": "BCD",
+		"market": "BCD_KRW",
+		"korean": "\ube44\ud2b8\ucf54\uc778 \ub2e4\uc774\uc544\ubaac\ub4dc"
+	},
+	"ORC": {
+		"symbol": "ORC",
+		"market": "ORC_KRW",
+		"korean": "\uc624\ub974\ube57 \uccb4\uc778"
+	},
+	"SOC": {
+		"symbol": "SOC",
+		"market": "SOC_KRW",
+		"korean": "\uc18c\ub2e4\ucf54\uc778"
+	},
+	"WAVES": {
+		"symbol": "WAVES",
+		"market": "WAVES_KRW",
+		"korean": "\uc6e8\uc774\ube0c"
+	},
+	"TFUEL": {
+		"symbol": "TFUEL",
+		"market": "TFUEL_KRW",
+		"korean": "\uc384\ud0c0\ud4e8\uc5d8"
+	},
+	"ARPA": {
+		"symbol": "ARPA",
+		"market": "ARPA_KRW",
+		"korean": "\uc54c\ud30c\uccb4\uc778"
+	},
+	"HIVE": {
+		"symbol": "HIVE",
+		"market": "HIVE_KRW",
+		"korean": "\ud558\uc774\ube0c"
+	},
+	"XPR": {
+		"symbol": "XPR",
+		"market": "XPR_KRW",
+		"korean": "\ud504\ub85c\ud1a4"
+	},
+	"ADP": {
+		"symbol": "ADP",
+		"market": "ADP_KRW",
+		"korean": "\uc5b4\ub311\ud130 \ud1a0\ud070"
+	},
+	"WAXP": {
+		"symbol": "WAXP",
+		"market": "WAXP_KRW",
+		"korean": "\uc641\uc2a4"
+	},
+	"OBSR": {
+		"symbol": "OBSR",
+		"market": "OBSR_KRW",
+		"korean": "\uc635\uc800\ubc84"
+	},
+	"BFC": {
+		"symbol": "BFC",
+		"market": "BFC_KRW",
+		"korean": "\ubc14\uc774\ud504\ub85c\uc2a4\ud2b8"
+	},
+	"ICX": {
+		"symbol": "ICX",
+		"market": "ICX_KRW",
+		"korean": "\uc544\uc774\ucf58"
+	},
+	"KSM": {
+		"symbol": "KSM",
+		"market": "KSM_KRW",
+		"korean": "\ucfe0\uc0ac\ub9c8"
+	},
+	"REP": {
+		"symbol": "REP",
+		"market": "REP_KRW",
+		"korean": "\uc5b4\uac70"
+	},
+	"CKB": {
+		"symbol": "CKB",
+		"market": "CKB_KRW",
+		"korean": "\ub108\ubcf4\uc2a4"
+	},
+	"ORBS": {
+		"symbol": "ORBS",
+		"market": "ORBS_KRW",
+		"korean": "\uc624\ube0c\uc2a4"
+	},
+	"VRA": {
+		"symbol": "VRA",
+		"market": "VRA_KRW",
+		"korean": "\ubca0\ub77c\uc2dc\ud2f0"
+	},
+	"OXT": {
+		"symbol": "OXT",
+		"market": "OXT_KRW",
+		"korean": "\uc624\ud0a4\ub4dc"
+	},
+	"SNX": {
+		"symbol": "SNX",
+		"market": "SNX_KRW",
+		"korean": "\uc2e0\uc138\ud2f1\uc2a4"
+	},
+	"ELF": {
+		"symbol": "ELF",
+		"market": "ELF_KRW",
+		"korean": "\uc5d8\ud504"
+	},
+	"SSX": {
+		"symbol": "SSX",
+		"market": "SSX_KRW",
+		"korean": "\uc378\uc53d"
+	},
+	"LPT": {
+		"symbol": "LPT",
+		"market": "LPT_KRW",
+		"korean": "\ub77c\uc774\ube0c\ud53c\uc5b4"
+	},
+	"BURGER": {
+		"symbol": "BURGER",
+		"market": "BURGER_KRW",
+		"korean": "\ubc84\uac70\uc2a4\uc651"
+	},
+	"FX": {
+		"symbol": "FX",
+		"market": "FX_KRW",
+		"korean": "\ud391\uc158\uc5d1\uc2a4"
+	},
+	"STEEM": {
+		"symbol": "STEEM",
+		"market": "STEEM_KRW",
+		"korean": "\uc2a4\ud300"
+	},
+	"POWR": {
+		"symbol": "POWR",
+		"market": "POWR_KRW",
+		"korean": "\ud30c\uc6cc\ub81b\uc800"
+	},
+	"SNT": {
+		"symbol": "SNT",
+		"market": "SNT_KRW",
+		"korean": "\uc2a4\ud14c\uc774\ud130\uc2a4\ub124\ud2b8\uc6cc\ud06c\ud1a0\ud070"
+	},
+	"FIT": {
+		"symbol": "FIT",
+		"market": "FIT_KRW",
+		"korean": "300\ud53c\ud2b8 \ub124\ud2b8\uc6cc\ud06c"
+	},
+	"MBL": {
+		"symbol": "MBL",
+		"market": "MBL_KRW",
+		"korean": "\ubb34\ube44\ube14\ub85d"
+	},
+	"COS": {
+		"symbol": "COS",
+		"market": "COS_KRW",
+		"korean": "\ucf58\ud150\ud1a0\uc2a4"
+	},
+	"WICC": {
+		"symbol": "WICC",
+		"market": "WICC_KRW",
+		"korean": "\uc6e8\uc774\ud0a4\uccb4\uc778"
+	},
+	"CRO": {
+		"symbol": "CRO",
+		"market": "CRO_KRW",
+		"korean": "\ud06c\ub9bd\ud1a0\ub2f7\ucef4\uccb4\uc778"
+	},
+	"RLC": {
+		"symbol": "RLC",
+		"market": "RLC_KRW",
+		"korean": "\uc544\uc774\uc81d"
+	},
+	"ENJ": {
+		"symbol": "ENJ",
+		"market": "ENJ_KRW",
+		"korean": "\uc5d4\uc9c4\ucf54\uc778"
+	},
+	"ONT": {
+		"symbol": "ONT",
+		"market": "ONT_KRW",
+		"korean": "\uc628\ud1a8\ub85c\uc9c0"
+	},
+	"APIX": {
+		"symbol": "APIX",
+		"market": "APIX_KRW",
+		"korean": "\uc544\ud53d\uc2a4"
+	},
+	"TRUE": {
+		"symbol": "TRUE",
+		"market": "TRUE_KRW",
+		"korean": "\ud2b8\ub8e8\uccb4\uc778"
+	},
+	"PCI": {
+		"symbol": "PCI",
+		"market": "PCI_KRW",
+		"korean": "\ud398\uc774\ucf54\uc778"
+	},
+	"MAP": {
+		"symbol": "MAP",
+		"market": "MAP_KRW",
+		"korean": "\ub9f5\ud504\ub85c\ud1a0\ucf5c"
+	},
+	"SUSHI": {
+		"symbol": "SUSHI",
+		"market": "SUSHI_KRW",
+		"korean": "\uc2a4\uc2dc\uc2a4\uc651"
+	},
+	"WOZX": {
+		"symbol": "WOZX",
+		"market": "WOZX_KRW",
+		"korean": "\uc774\ud3ec\uc2a4"
+	},
+	"CTXC": {
+		"symbol": "CTXC",
+		"market": "CTXC_KRW",
+		"korean": "\ucf54\ub974\ud14d\uc2a4"
+	},
+	"AWO": {
+		"symbol": "AWO",
+		"market": "AWO_KRW",
+		"korean": "\uc5d0\uc774\uc544\uc774\uc6cc\ud06c"
+	},
+	"BORA": {
+		"symbol": "BORA",
+		"market": "BORA_KRW",
+		"korean": "\ubcf4\ub77c"
+	},
+	"BOA": {
+		"symbol": "BOA",
+		"market": "BOA_KRW",
+		"korean": "\ubcf4\uc544"
+	},
+	"NMR": {
+		"symbol": "NMR",
+		"market": "NMR_KRW",
+		"korean": "\ub274\uba54\ub808\ub974"
+	},
+	"MM": {
+		"symbol": "MM",
+		"market": "MM_KRW",
+		"korean": "\ubc00\ub9ac\ubbf8\ud130\ud1a0\ud070"
+	},
+	"AION": {
+		"symbol": "AION",
+		"market": "AION_KRW",
+		"korean": "\uc544\uc774\uc628"
+	},
+	"GHX": {
+		"symbol": "GHX",
+		"market": "GHX_KRW",
+		"korean": "\uac8c\uc774\uba38\ucf54\uc778"
+	},
+	"UOS": {
+		"symbol": "UOS",
+		"market": "UOS_KRW",
+		"korean": "\uc6b8\ud2b8\ub77c"
+	},
+	"JST": {
+		"symbol": "JST",
+		"market": "JST_KRW",
+		"korean": "\uc800\uc2a4\ud2b8"
+	},
+	"BAL": {
+		"symbol": "BAL",
+		"market": "BAL_KRW",
+		"korean": "\ubc38\ub7f0\uc11c"
+	},
+	"FLETA": {
+		"symbol": "FLETA",
+		"market": "FLETA_KRW",
+		"korean": "\ud50c\ub808\ud0c0"
+	},
+	"CAKE": {
+		"symbol": "CAKE",
+		"market": "CAKE_KRW",
+		"korean": "\ud32c\ucf00\uc774\ud06c\uc2a4\uc651"
+	},
+	"CYCLUB": {
+		"symbol": "CYCLUB",
+		"market": "CYCLUB_KRW",
+		"korean": "\uc2f8\uc774\ud074\ub7fd"
+	},
+	"CTSI": {
+		"symbol": "CTSI",
+		"market": "CTSI_KRW",
+		"korean": "\uce74\ub974\ud14c\uc2dc"
+	},
+	"SUN": {
+		"symbol": "SUN",
+		"market": "SUN_KRW",
+		"korean": "\uc36c"
+	},
+	"CENNZ": {
+		"symbol": "CENNZ",
+		"market": "CENNZ_KRW",
+		"korean": "\uc13c\ud2b8\ub7f4\ub9ac\ud2f0"
+	},
+	"BLY": {
+		"symbol": "BLY",
+		"market": "BLY_KRW",
+		"korean": "\ube14\ub85c\uc11c\ub9ac"
+	},
+	"TEMCO": {
+		"symbol": "TEMCO",
+		"market": "TEMCO_KRW",
+		"korean": "\ud15c\ucf54"
+	},
+	"XYM": {
+		"symbol": "XYM",
+		"market": "XYM_KRW",
+		"korean": "\uc2ec\ubcfc"
+	},
+	"RINGX": {
+		"symbol": "RINGX",
+		"market": "RINGX_KRW",
+		"korean": "\ub9c1\uc5d1\uc2a4"
+	},
+	"TMTG": {
+		"symbol": "TMTG",
+		"market": "TMTG_KRW",
+		"korean": "\ub354\ub9c8\uc774\ub2e4\uc2a4\ud130\uce58\uace8\ub4dc"
+	},
+	"GLM": {
+		"symbol": "GLM",
+		"market": "GLM_KRW",
+		"korean": "\uace8\ub818"
+	},
+	"WTC": {
+		"symbol": "WTC",
+		"market": "WTC_KRW",
+		"korean": "\uc6d4\ud2bc\uccb4\uc778"
+	},
+	"QKC": {
+		"symbol": "QKC",
+		"market": "QKC_KRW",
+		"korean": "\ucffc\ud06c\uccb4\uc778"
+	},
+	"EL": {
+		"symbol": "EL",
+		"market": "EL_KRW",
+		"korean": "\uc5d8\ub9ac\uc2dc\uc544"
+	},
+	"WIKEN": {
+		"symbol": "WIKEN",
+		"market": "WIKEN_KRW",
+		"korean": "\uc704\ub4dc"
+	},
+	"EM": {
+		"symbol": "EM",
+		"market": "EM_KRW",
+		"korean": "\uc774\ub9c8\uc774\ub108"
+	},
+	"BAKE": {
+		"symbol": "BAKE",
+		"market": "BAKE_KRW",
+		"korean": "\ubca0\uc774\ucee4\ub9ac\ud1a0\ud070"
+	},
+	"CHZ": {
+		"symbol": "CHZ",
+		"market": "CHZ_KRW",
+		"korean": "\uce60\ub9ac\uc988"
+	},
+	"COLA": {
+		"symbol": "COLA",
+		"market": "COLA_KRW",
+		"korean": "\ucf5c\ub77c\ud1a0\ud070"
+	},
+	"AQT": {
+		"symbol": "AQT",
+		"market": "AQT_KRW",
+		"korean": "\uc54c\ud30c\ucffc\ud06c"
+	},
+	"LRC": {
+		"symbol": "LRC",
+		"market": "LRC_KRW",
+		"korean": "\ub8e8\ud504\ub9c1"
+	},
+	"HIBS": {
+		"symbol": "HIBS",
+		"market": "HIBS_KRW",
+		"korean": "\ud799\uc2a4"
+	},
+	"UMA": {
+		"symbol": "UMA",
+		"market": "UMA_KRW",
+		"korean": "\uc6b0\ub9c8"
+	},
+	"MATIC": {
+		"symbol": "MATIC",
+		"market": "MATIC_KRW",
+		"korean": "\ud3f4\ub9ac\uace4"
+	},
+	"FCT": {
+		"symbol": "FCT",
+		"market": "FCT_KRW",
+		"korean": "\ud53c\ub974\ub9c8\uccb4\uc778"
+	},
+	"MXC": {
+		"symbol": "MXC",
+		"market": "MXC_KRW",
+		"korean": "\uba38\uc2e0\uc775\uc2a4\uccb4\uc778\uc9c0\ucf54\uc778"
+	},
+	"EGG": {
+		"symbol": "EGG",
+		"market": "EGG_KRW",
+		"korean": "\ub124\uc2a4\ud2b8\ub9ac"
+	},
+	"KNC": {
+		"symbol": "KNC",
+		"market": "KNC_KRW",
+		"korean": "\uce74\uc774\ubc84 \ub124\ud2b8\uc6cc\ud06c"
+	},
+	"ZIL": {
+		"symbol": "ZIL",
+		"market": "ZIL_KRW",
+		"korean": "\uc9c8\ub9ac\uce74"
+	},
+	"GRT": {
+		"symbol": "GRT",
+		"market": "GRT_KRW",
+		"korean": "\ub354\uadf8\ub798\ud504"
+	},
+	"DAI": {
+		"symbol": "DAI",
+		"market": "DAI_KRW",
+		"korean": "\ub2e4\uc774"
+	},
+	"COMP": {
+		"symbol": "COMP",
+		"market": "COMP_KRW",
+		"korean": "\ucef4\ud30c\uc6b4\ub4dc"
+	},
+	"EVZ": {
+		"symbol": "EVZ",
+		"market": "EVZ_KRW",
+		"korean": "\uc774\ube0c\uc774\uc9c0"
+	},
+	"CHR": {
+		"symbol": "CHR",
+		"market": "CHR_KRW",
+		"korean": "\ud06c\ub85c\ubbf8\uc544"
+	},
+	"RSR": {
+		"symbol": "RSR",
+		"market": "RSR_KRW",
+		"korean": "\ub9ac\uc800\ube0c\ub77c\uc774\ud2b8"
+	},
+	"CON": {
+		"symbol": "CON",
+		"market": "CON_KRW",
+		"korean": "\ucf54\ub10c"
+	},
+	"BNT": {
+		"symbol": "BNT",
+		"market": "BNT_KRW",
+		"korean": "\ubc45\ucf54\ub974"
+	},
+	"XVS": {
+		"symbol": "XVS",
+		"market": "XVS_KRW",
+		"korean": "\ube44\ub108\uc2a4"
+	},
+	"MIR": {
+		"symbol": "MIR",
+		"market": "MIR_KRW",
+		"korean": "\ubbf8\ub7ec \ud504\ub85c\ud1a0\ucf5c"
+	},
+	"LINA": {
+		"symbol": "LINA",
+		"market": "LINA_KRW",
+		"korean": "\ub9ac\ub2c8\uc5b4\ud30c\uc774\ub0b8\uc2a4"
+	},
+	"AAVE": {
+		"symbol": "AAVE",
+		"market": "AAVE_KRW",
+		"korean": "\uc5d0\uc774\ube0c"
+	},
+	"POLA": {
+		"symbol": "POLA",
+		"market": "POLA_KRW",
+		"korean": "\ud3f4\ub77c\ub9ac\uc2a4 \uc250\uc5b4"
+	},
+	"ARW": {
+		"symbol": "ARW",
+		"market": "ARW_KRW",
+		"korean": "\uc544\ub85c\uc640\ub098\ud1a0\ud070"
+	},
+	"RAI": {
+		"symbol": "RAI",
+		"market": "RAI_KRW",
+		"korean": "\ub77c\uc774\ud30c\uc774\ub0b8\uc2a4"
+	},
+	"IPX": {
+		"symbol": "IPX",
+		"market": "IPX_KRW",
+		"korean": "\ud0c0\ud0a4\uc628\ud504\ub85c\ud1a0\ucf5c"
+	},
+	"STRAX": {
+		"symbol": "STRAX",
+		"market": "STRAX_KRW",
+		"korean": "\uc2a4\ud2b8\ub77c\ud2f0\uc2a4"
+	},
+	"BEL": {
+		"symbol": "BEL",
+		"market": "BEL_KRW",
+		"korean": "\ubca8\ub77c\ud504\ub85c\ud1a0\ucf5c"
+	},
+	"WOM": {
+		"symbol": "WOM",
+		"market": "WOM_KRW",
+		"korean": "\uc650\ud1a0\ud070"
+	},
+	"VSYS": {
+		"symbol": "VSYS",
+		"market": "VSYS_KRW",
+		"korean": "\ube0c\uc774\uc2dc\uc2a4\ud15c\uc988"
+	},
+	"CTK": {
+		"symbol": "CTK",
+		"market": "CTK_KRW",
+		"korean": "\uc368\ud2f1"
+	},
+	"MKR": {
+		"symbol": "MKR",
+		"market": "MKR_KRW",
+		"korean": "\uba54\uc774\ucee4"
+	},
+	"ZRX": {
+		"symbol": "ZRX",
+		"market": "ZRX_KRW",
+		"korean": "\uc81c\ub85c\uc5d1\uc2a4"
+	},
+	"RLY": {
+		"symbol": "RLY",
+		"market": "RLY_KRW",
+		"korean": "\ub7a0\ub9ac"
+	},
+	"BAT": {
+		"symbol": "BAT",
+		"market": "BAT_KRW",
+		"korean": "\ubca0\uc774\uc9c1\uc5b4\ud150\uc158\ud1a0\ud070"
+	},
+	"TRV": {
+		"symbol": "TRV",
+		"market": "TRV_KRW",
+		"korean": "\ud2b8\ub7ec\uc2a4\ud2b8\ubc84\uc2a4"
+	},
+	"GXC": {
+		"symbol": "GXC",
+		"market": "GXC_KRW",
+		"korean": "\uc9c0\uc5d1\uc2a4\uccb4\uc778"
+	},
+	"DAD": {
+		"symbol": "DAD",
+		"market": "DAD_KRW",
+		"korean": "\ub2e4\ub4dc"
+	},
+	"APM": {
+		"symbol": "APM",
+		"market": "APM_KRW",
+		"korean": "\uc5d0\uc774\ud53c\uc5e0 \ucf54\uc778"
+	},
+	"OCEAN": {
+		"symbol": "OCEAN",
+		"market": "OCEAN_KRW",
+		"korean": "\uc624\uc158\ud504\ub85c\ud1a0\ucf5c"
+	},
+	"VALOR": {
+		"symbol": "VALOR",
+		"market": "VALOR_KRW",
+		"korean": "\ubc38\ub7ec\ud1a0\ud070"
+	}
+}
