@@ -12,7 +12,9 @@ ACCESS_SECRET_KEY = 'KFpI6M/M6TSYVTQt13MFnv9LrdU9QDzR3Kzm2Oc2'
 BUCKET_NAME = 'youngcha-coin-service'
 
 
-coin_list = dict()
+#coin_list = dict()
+coin_list= []
+
 
 url = 'https://www.bithumb.com/'
 req_header = {'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/93.0.4577.82 Safari/537.36'}
@@ -40,7 +42,8 @@ if res.ok:
                 coin_dict["symbol"]=symbol
                 coin_dict["market"]=market
                 coin_dict["korean"]=korean
-                coin_list[coin_dict["symbol"]]=coin_dict
+                #coin_list[coin_dict["symbol"]]=coin_dict
+                coin_list.append(coin_dict)
 
     object.put(
         ACL="public-read",
