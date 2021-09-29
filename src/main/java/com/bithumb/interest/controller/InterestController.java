@@ -1,7 +1,7 @@
 package com.bithumb.interest.controller;
 
+import com.bithumb.coin.controller.CoinService;
 import com.bithumb.coin.domain.Coin;
-import com.bithumb.coin.repository.CoinRepository;
 import com.bithumb.common.response.ApiResponse;
 import com.bithumb.common.response.ErrorCode;
 import com.bithumb.common.response.StatusCode;
@@ -15,6 +15,8 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.io.IOException;
+import java.util.HashMap;
 
 
 @RequestMapping
@@ -24,7 +26,8 @@ import org.springframework.web.bind.annotation.*;
 @CrossOrigin(origins = "*", allowCredentials = "false")
 public class InterestController {
     private final InterestRepository interestRepository;
-    private final CoinRepository coinRepository;
+//    private final CoinRepository coinRepository;
+    private final CoinService coinService;
 
     @GetMapping("/interests/{user-id}")
     public ResponseEntity<?> getInterests(@PathVariable(value = "user-id") long userId){
@@ -35,8 +38,10 @@ public class InterestController {
     }
 
     @PostMapping("/interest/{user-id}")
-    public ResponseEntity<?> createInterest(@PathVariable(value = "user-id") long userId, @RequestBody InterestDto symbol){
-        Boolean exsitsCoin = coinRepository.existsCoinBySymbol(symbol.getSymbol()).block().booleanValue();
+    public ResponseEntity<?> createInterest(@PathVariable(value = "user-id") long userId, @RequestBody InterestDto symbol) throws IOException {
+        HashMap coins = coinService.getCoins();
+        Boolean exsitsCoin = coins.containsKey(symbol.getSymbol());
+//        Boolean exsitsCoin = coinRepository.existsCoinBySymbol(symbol.getSymbol()).block().booleanValue();
         ApiResponse apiResponse = ApiResponse.responseMessage(StatusCode.SUCCESS,
                 SuccessCode.INTEREST_CREATE_SUCCESS.getMessage());
         if (!exsitsCoin) {
@@ -44,6 +49,7 @@ public class InterestController {
             apiResponse.setStatus(StatusCode.FAIL);
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body(apiResponse);
         }
+        Coin coin = (Coin) coins.get(symbol.getSymbol());
 
         Boolean existsDB = interestRepository.existsInterestBySymbolAndUserId(symbol.getSymbol(),userId).block().booleanValue();
         if (existsDB) {
@@ -51,7 +57,9 @@ public class InterestController {
             apiResponse.setMessage(ErrorCode.ALREADY_EXISTS);
             return ResponseEntity.status(HttpStatus.ALREADY_REPORTED).body(apiResponse);
         }
-        Coin coin = coinRepository.findRegexBySymbol(symbol.getSymbol()).block();
+
+
+//        Coin coin = coinRepository.findRegexBySymbol(symbol.getSymbol()).block();
 
         Interest interest = new Interest();
         interest.setUserId(userId);
