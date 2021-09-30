@@ -1,27 +1,15 @@
-package com.bithumb.coin.controller;
-
+package com.bithumb.coin.service;
 import com.amazonaws.auth.AWSStaticCredentialsProvider;
 import com.amazonaws.auth.BasicAWSCredentials;
 import com.amazonaws.regions.Regions;
 import com.amazonaws.services.s3.AmazonS3;
 import com.amazonaws.services.s3.AmazonS3ClientBuilder;
-import com.amazonaws.services.s3.model.GetObjectRequest;
 import com.amazonaws.services.s3.model.S3Object;
 import com.amazonaws.services.s3.model.S3ObjectInputStream;
-import com.amazonaws.util.StringUtils;
 import com.bithumb.coin.domain.Coin;
-import com.bithumb.coin.domain.CoinDto;
-import com.bithumb.common.response.ApiResponse;
-import com.bithumb.common.response.ErrorCode;
-import com.bithumb.common.response.StatusCode;
-import com.bithumb.common.response.SuccessCode;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import io.swagger.annotations.Api;
 import lombok.RequiredArgsConstructor;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
-import org.springframework.web.bind.annotation.*;
 
 import java.io.*;
 import java.util.HashMap;
@@ -29,7 +17,7 @@ import java.util.HashMap;
 
 @RequiredArgsConstructor
 @Service
-public class CoinService {
+public class CoinServiceImpl implements CoinService {
     public HashMap<String, Coin> getCoins() throws IOException {
         String bucket_name = "youngcha-coin-service";
         String key_name = "coinlist/coin-list.json";

@@ -11,7 +11,6 @@ import org.springframework.data.mongodb.core.mapping.Document;
 @Data
 @RequiredArgsConstructor
 @EqualsAndHashCode @ToString
-@Document(collection = "coins")
 public class Coin {
     private String symbol;
     private String korean;

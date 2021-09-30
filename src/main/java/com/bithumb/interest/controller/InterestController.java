@@ -1,6 +1,6 @@
 package com.bithumb.interest.controller;
 
-import com.bithumb.coin.controller.CoinService;
+import com.bithumb.coin.service.CoinService;
 import com.bithumb.coin.domain.Coin;
 import com.bithumb.common.response.ApiResponse;
 import com.bithumb.common.response.ErrorCode;
