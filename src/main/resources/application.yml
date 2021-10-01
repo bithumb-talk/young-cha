@@ -2,6 +2,8 @@ spring:
   data:
     mongodb:
       uri: mongodb://mongo:27017/test
+  application:
+    name: interest
 eureka:
   client:
     register-with-eureka: true
