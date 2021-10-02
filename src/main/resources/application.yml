@@ -22,3 +22,10 @@ cloud:
       static: ap-northeast-2
     stack:
       auto: false
+server:
+  port: 5000
+logging:
+  level:
+    root: info
+  file:
+    path: "/home/ubuntu/logging/interest"

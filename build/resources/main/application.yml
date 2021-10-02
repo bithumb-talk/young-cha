@@ -1,0 +1,31 @@
+spring:
+  data:
+    mongodb:
+      uri: mongodb://mongo:27017/test
+  application:
+    name: interest
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: http://3.38.23.41:6020/eureka
+
+cloud:
+  aws:
+    credentials:
+      accessKey: AKIA2SJCWGIOHZXVYN5I
+      secretKey: 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
+    s3:
+      bucket: youngcha-coin-service
+    region:
+      static: ap-northeast-2
+    stack:
+      auto: false
+server:
+  port: 5000
+logging:
+  level:
+    root: info
+  file:
+    path: "/home/ubuntu/logging/interest"

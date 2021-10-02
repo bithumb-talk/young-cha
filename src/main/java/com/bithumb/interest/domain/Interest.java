@@ -8,10 +8,10 @@ import org.springframework.data.mongodb.core.mapping.Document;
 import java.io.Serializable;
 import java.util.List;
 
-@Data
+@Getter
 @RequiredArgsConstructor
 @EqualsAndHashCode @ToString
-@AllArgsConstructor
+@AllArgsConstructor @Builder
 @Document(collection = "interests")
 public class Interest {
     @Id

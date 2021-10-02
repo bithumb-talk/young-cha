@@ -1,6 +1,5 @@
 HELP.md
 .gradle
-build/
 data/db/
 !gradle/wrapper/gradle-wrapper.jar
 !**/src/main/**/build/
