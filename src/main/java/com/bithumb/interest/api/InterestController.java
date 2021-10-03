@@ -26,7 +26,6 @@ import java.util.List;
 @CrossOrigin(origins = "*", allowCredentials = "false")
 public class InterestController {
     private final InterestServiceImpl interestService;
-    private final CoinService coinService;
 
     @GetMapping("/interests/{user-id}")
     public ResponseEntity<?> getInterests(@PathVariable(value = "user-id") long userId){
