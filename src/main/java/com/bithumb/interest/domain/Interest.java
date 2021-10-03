@@ -24,7 +24,7 @@ public class Interest {
     @Column(name="interest_market")
     private String market;
 
-    @Column(name="interest_userId")
+    @Column(name="user_no")
     private long userId;
 
     @Builder

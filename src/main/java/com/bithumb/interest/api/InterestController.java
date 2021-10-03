@@ -52,6 +52,5 @@ public class InterestController {
         ApiResponse apiResponse = ApiResponse.responseMessage(StatusCode.SUCCESS,
                 SuccessCode.INTEREST_DELETE_SUCCESS.getMessage());
         return ResponseEntity.status(HttpStatus.OK).body(apiResponse);
-
     }
 }
