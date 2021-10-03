@@ -1,10 +1,9 @@
 #-*- coding:utf-8 -*-
-
 import logging
 import requests
-from bs4 import BeautifulSoup
 import re
 import json
+from bs4 import BeautifulSoup
 import boto3
 from botocore.client import Config
 
@@ -43,7 +42,6 @@ if res.ok:
                 coin_dict["symbol"]=symbol
                 coin_dict["market"]=market
                 coin_dict["korean"]=korean
-                #coin_list[coin_dict["symbol"]]=coin_dict
                 coin_list.append(coin_dict)
                 cnt = cnt+1
 
