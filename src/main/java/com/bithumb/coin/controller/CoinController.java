@@ -16,7 +16,6 @@ public class CoinController {
     private final CoinService coinService;
     @GetMapping("/coins")
     public void getInterests() throws IOException {
-
         coinService.getCoins();
     }
 

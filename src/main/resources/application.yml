@@ -1,12 +1,8 @@
 spring:
-#  data:
-#    mongodb:
-#      uri: mongodb://mongo:27017/test
   application:
     name: interest
   datasource:
     driver-class-name: org.mariadb.jdbc.Driver
-    #url: jdbc:mariadb://localhost:5001/bithumb
     url: jdbc:mariadb://youngcha-interest.crtppt0lvgk7.ap-northeast-2.rds.amazonaws.com:3306/bithumb
     username: admin
     password: youngcha1008
@@ -15,8 +11,6 @@ spring:
     show-sql: true
     hibernate:
       ddl-auto: update
-    #    generate-ddl: true
-    #    defer-datasource-initialization: true
     properties:
       hibernate:
         dialect: org.hibernate.dialect.MariaDBDialect
@@ -34,6 +28,7 @@ cloud:
       secretKey: KFpI6M/M6TSYVTQt13MFnv9LrdU9QDzR3Kzm2Oc2
     s3:
       bucket: youngcha-coin-service
+      key: coinlist/coin-list.json
     region:
       static: ap-northeast-2
     stack:
