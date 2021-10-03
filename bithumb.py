@@ -1,5 +1,6 @@
 #-*- coding:utf-8 -*-
 
+import logging
 import requests
 from bs4 import BeautifulSoup
 import re
@@ -29,7 +30,7 @@ if res.ok:
     html = res.text
     soup = BeautifulSoup(html, 'html.parser')
     coins = soup.select('#sise_list > tbody > tr')
-
+    cnt=0
     for coin in coins:
         koreans = coin.select('td:nth-child(1) > div > p > a > strong')
         markets = coin.select('td:nth-child(1) > div > p > a > span')
@@ -44,6 +45,7 @@ if res.ok:
                 coin_dict["korean"]=korean
                 #coin_list[coin_dict["symbol"]]=coin_dict
                 coin_list.append(coin_dict)
+                cnt = cnt+1
 
     object.put(
         ACL="public-read",
@@ -51,6 +53,15 @@ if res.ok:
         Key='coinlist/coin-list.json',
 
     )
-    
-print("Success Create Coins")
+    mylogger = logging.getLogger("youngcha")
+    mylogger.setLevel(logging.INFO)
+
+    formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s')
+
+    stream_hander = logging.StreamHandler()
+    stream_hander.setFormatter(formatter)
+    mylogger.addHandler(stream_hander)
+
+    mylogger.info("Successfully saving %d coin list",cnt)
+
 
