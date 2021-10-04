@@ -2,14 +2,18 @@ package com.bithumb.interest.repository;
 
 
 import com.bithumb.interest.domain.Interest;
-import org.springframework.data.mongodb.repository.ReactiveMongoRepository;
+import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
-import reactor.core.publisher.Flux;
-import reactor.core.publisher.Mono;
+
+import javax.transaction.Transactional;
+import java.util.List;
+
 
 @Repository
-public interface InterestRepository extends ReactiveMongoRepository<Interest, Long> {
-    Flux<Interest> findByUserId(long userId);
-    Mono<Boolean> existsInterestBySymbolAndUserId(String symbol,long userId);
-    Mono<Void> deleteInterestBySymbolAndUserId(String symbol, long userId);
+public interface InterestRepository extends JpaRepository<Interest, Long> {
+    List<Interest> findByUserId(long userId);
+    Boolean existsInterestBySymbolAndUserId(String symbol,long userId);
+    @Transactional
+    void deleteInterestBySymbolAndUserId(String symbol, long userId);
+
 }

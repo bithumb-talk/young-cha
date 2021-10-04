@@ -1,15 +1,25 @@
 spring:
-  data:
-    mongodb:
-      uri: mongodb://mongo:27017/test
   application:
     name: interest
+  datasource:
+    driver-class-name: org.mariadb.jdbc.Driver
+    url: jdbc:mariadb://youngcha-interest.crtppt0lvgk7.ap-northeast-2.rds.amazonaws.com:3306/bithumb
+    username: admin
+    password: youngcha1008
+    sql-script-encoding: UTF-8
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MariaDBDialect
 eureka:
   client:
     register-with-eureka: true
     fetch-registry: true
     service-url:
-      defaultZone: http://3.38.23.41:6020/eureka
+      defaultZone: http://3.38.23.41:8761/eureka
 
 cloud:
   aws:
@@ -18,6 +28,7 @@ cloud:
       secretKey: KFpI6M/M6TSYVTQt13MFnv9LrdU9QDzR3Kzm2Oc2
     s3:
       bucket: youngcha-coin-service
+      key: coinlist/coin-list.json
     region:
       static: ap-northeast-2
     stack:

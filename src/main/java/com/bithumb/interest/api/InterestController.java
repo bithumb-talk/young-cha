@@ -26,7 +26,6 @@ import java.util.List;
 @CrossOrigin(origins = "*", allowCredentials = "false")
 public class InterestController {
     private final InterestServiceImpl interestService;
-    private final CoinService coinService;
 
     @GetMapping("/interests/{user-id}")
     public ResponseEntity<?> getInterests(@PathVariable(value = "user-id") long userId){
@@ -52,6 +51,5 @@ public class InterestController {
         ApiResponse apiResponse = ApiResponse.responseMessage(StatusCode.SUCCESS,
                 SuccessCode.INTEREST_DELETE_SUCCESS.getMessage());
         return ResponseEntity.status(HttpStatus.OK).body(apiResponse);
-
     }
 }
