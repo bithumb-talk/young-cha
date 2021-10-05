@@ -20,7 +20,8 @@ eureka:
     fetch-registry: true
     service-url:
       defaultZone: http://3.38.23.41:8761/eureka
-
+  instance:
+    prefer-ip-address: true
 cloud:
   aws:
     credentials:
