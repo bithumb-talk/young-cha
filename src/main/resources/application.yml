@@ -1,6 +1,6 @@
 spring:
   application:
-    name: interest
+    name: INTEREST
   datasource:
     driver-class-name: org.mariadb.jdbc.Driver
     url: jdbc:mariadb://youngcha-interest.crtppt0lvgk7.ap-northeast-2.rds.amazonaws.com:3306/bithumb
