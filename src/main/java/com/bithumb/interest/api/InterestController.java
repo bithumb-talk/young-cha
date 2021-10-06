@@ -18,12 +18,11 @@ import org.springframework.web.bind.annotation.*;
 import java.io.IOException;
 import java.util.List;
 
-
+//@CrossOrigin(origins = "*", allowCredentials = "false")
 @RequestMapping
 @RequiredArgsConstructor
 @RestController
 @Api
-@CrossOrigin(origins = "*", allowCredentials = "false")
 public class InterestController {
     private final InterestServiceImpl interestService;
 

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.bithumb.interest.controller.S3ConnectionTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2021-10-06T09:23:49" hostname="jonghyeokui-MacBookAir.local" time="0.321">
+  <properties/>
+  <testcase name="AWS Connection Test" classname="com.bithumb.interest.controller.S3ConnectionTest" time="0.321"/>
+  <system-out><![CDATA[org.mariadb.jdbc.MariaDbConnection@766b3c35
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
