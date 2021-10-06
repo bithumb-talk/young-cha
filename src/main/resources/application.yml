@@ -7,21 +7,33 @@ eureka:
     register-with-eureka: true
     fetch-registry: true
     service-url:
-      defaultZone: http://3.38.23.41:6020/eureka
+      defaultZone: http://3.38.23.41:8761/eureka
 
-#management:
-#  endpoints:
-#    web:
-#      exposure:
-#        include:
-#          - "gateway"
-#  endpoint:
-#    gateway:
-#      enabled: true
+  instance:
+    prefer-ip-address: true
 
 spring:
   cloud:
     gateway:
+      globalcors:
+        corsConfigurations:
+          '[/**]':
+            allowedOrigins: "*"
+            allow-credentials: false   #추가
+            allowedHeaders:
+              - x-requested-with
+              - authorization
+              - content-type
+              - credential
+              - X-AUTH-TOKEN
+              - X-CSRF-TOKEN
+            allowedMethods:
+              - POST
+              - GET
+              - PUT
+              - OPTIONS
+              - DELETE
+
       # Gateway 공통 필터
       default-filters:
         - name: GlobalFilter
@@ -29,22 +41,27 @@ spring:
             baseMessage: Spring Cloud Gateway GlobalFilter
             preLogger: true
             postLogger: true
+
       # MSA 라우팅 정의
       # ID, 목적지(uri), 조건(Predicate), 필터로 구성된다.
       routes:
-#        - id: user-service
+        - id: user-service
+          uri: http://3.38.23.41:6000
 #          uri: lb://USER
-#          predicates:
-#            - Path=/users/**
-#          filters:
-#            - name: UserFilter
-#              args:
-#                baseMessage: Taeu UserFilter
-#                preLogger: true
-#                postLogger: true
+          predicates:
+            - Path=/users/**
+          filters:
+            - name: UserFilter
+              args:
+                baseMessage: Taeu UserFilter
+                preLogger: true
+                postLogger: true
 
         - id: auth-service
-          uri: lb://USER
+          uri: http://3.38.23.41:6000
+#          uri: lb://USER
+#          uri: http://localhost:8081
+
           predicates:
             - Path=/auth/**
           filters:
@@ -53,6 +70,82 @@ spring:
                 baseMessage: Taeu GlobalFilter
                 preLogger: true
                 postLogger: true
+
+        - id: auth-board-service
+          uri: http://3.38.23.41:6000
+#          uri: lb://USER
+          predicates:
+            - Path=/user-boards/**
+          filters:
+            - name: UserFilter
+              args:
+                baseMessage: Taeu UserFilter
+                preLogger: true
+                postLogger: true
+
+
+        # 민지님 서비스
+        - id: board-service
+          uri: http://3.35.196.215:9998
+          predicates:
+            - Path=/all-boards/**
+          filters:
+            - name: AllBoardFilter
+              args:
+                baseMessage: Taeu AllBoardFilter
+                preLogger: true
+                postLogger: true
+
+        - id: board-service
+          uri: http://3.35.196.215:9998
+          predicates:
+            - Path=/boards/**
+          filters:
+            - name: BoardFilter
+              args:
+                baseMessage: Taeu BoardFilter
+                preLogger: true
+                postLogger: true
+
+
+        # 종혁님 서비스
+        - id: interests-service
+          uri: http://3.35.67.138:5000
+#          uri: lb://INTEREST
+          predicates:
+            - Path=/interests/**
+          filters:
+            - name: InterestFilter
+              args:
+                baseMessage: Taeu InterestFilter
+                preLogger: true
+                postLogger: true
+
+        - id: interest-service
+          uri: http://3.35.67.138:5000
+#          uri: lb://INTEREST
+          predicates:
+            - Path=/interest/**
+          filters:
+            - name: InterestFilter
+              args:
+                baseMessage: Taeu InterestFilter
+                preLogger: true
+                postLogger: true
+
+        - id: interest-service
+          uri: http://3.35.67.138:5020
+          predicates:
+            - Path=/**
+          filters:
+            - name: GlobalFilter
+              args:
+                baseMessage: Taeu GlobalFilter
+                preLogger: true
+                postLogger: true
+
+
+
 
 
   application:

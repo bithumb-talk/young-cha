@@ -1,31 +1,11 @@
 package com.example.apigatewayservice.filters;
 
-import io.jsonwebtoken.Claims;
-import io.jsonwebtoken.ExpiredJwtException;
-import io.jsonwebtoken.Jwts;
-import io.jsonwebtoken.MalformedJwtException;
-import io.jsonwebtoken.UnsupportedJwtException;
-
-import java.net.URI;
 import java.nio.charset.StandardCharsets;
-import java.security.InvalidKeyException;
-import java.security.Key;
-import java.security.SignatureException;
-import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
 import java.util.Arrays;
-import java.util.Collection;
-import java.util.Date;
 import java.util.List;
 import java.util.Objects;
-import java.util.stream.Collectors;
-
-import javax.xml.bind.ValidationException;
-
-import lombok.extern.slf4j.Slf4j;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.autoconfigure.neo4j.Neo4jProperties.Authentication;
 import org.springframework.cloud.gateway.filter.GatewayFilter;
 import org.springframework.cloud.gateway.filter.factory.AbstractGatewayFilterFactory;
 import org.springframework.core.env.Environment;
@@ -34,19 +14,20 @@ import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.server.reactive.ServerHttpRequest;
 import org.springframework.http.server.reactive.ServerHttpResponse;
-
 import org.springframework.stereotype.Component;
-import org.springframework.util.SocketUtils;
 import org.springframework.util.StringUtils;
 import org.springframework.web.server.ServerWebExchange;
 
+import io.jsonwebtoken.ExpiredJwtException;
+import io.jsonwebtoken.Jwts;
+import lombok.extern.slf4j.Slf4j;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
 @Slf4j
 @Component
-public class UserFilter extends AbstractGatewayFilterFactory<Config> {
-	public UserFilter() {
+public class AllBoardFilter extends AbstractGatewayFilterFactory<Config> {
+	public AllBoardFilter() {
 		super(Config.class);
 	}
 
@@ -71,24 +52,20 @@ public class UserFilter extends AbstractGatewayFilterFactory<Config> {
 
 			String pathString = request.getURI().getPath();
 			String[] extractPath = pathString.split("/");
-			System.out.println(extractPath[3]);
 
-			String pathId = extractPath[3];
-
-			// 은수 - user
-			if (pathId.equals("info")) {
-				System.out.println("유저 예외");
-				pathId = extractPath[2];
+			boolean checkAuthResult = false;
+			for (String checkAuth : extractPath){
+				if (checkAuth.equals("auth")){
+					checkAuthResult = true;
+				}
 			}
 
-			// 은수 - board
-			//pathId = extractPath[1];
-			if (extractPath[1].equals("user-boards")) {
-				System.out.println("보드");
-				pathId = extractPath[2];
+			// 토큰이 필요 없는 url이면 통과
+			if( checkAuthResult == false){
+				return chain.filter(exchange);
 			}
 
-			System.out.println("pathId " + pathId);
+
 
 			// Request Header 에서 token 문자열 받아오기
 			List<String> token = request.getHeaders().get("Authorization");
@@ -98,7 +75,7 @@ public class UserFilter extends AbstractGatewayFilterFactory<Config> {
 			int responseValue = 0;
 
 			try {
-				responseValue = isJwtValid(jwt, pathId);
+				responseValue = isJwtValid(jwt);
 			} catch (Exception e) {
 				responseValue = 904;
 			}
@@ -116,26 +93,10 @@ public class UserFilter extends AbstractGatewayFilterFactory<Config> {
 			}
 
 
-/*            //토큰 검증
-            if(!isJwtValid(jwt,extractPath[3],exchange)){
-                System.out.println("검증 실패");
-                //return onError(exchange,"JWT Token is not valid", HttpStatus.UNAUTHORIZED);
-
-
-                response.setStatusCode(HttpStatus.BAD_REQUEST);
-                return response.setComplete();
-            }*/
-
 			return chain.filter(exchange); // 토큰이 일치할 때
 		};
 	}
 
-	// private Mono<Void> onError(ServerWebExchange exchange, String err, HttpStatus httpStatus) {
-	// 	ServerHttpResponse response = exchange.getResponse();
-	// 	response.setStatusCode(httpStatus);
-	// 	log.error(err);
-	// 	return response.setComplete();
-	// }
 
 	public Mono<Void> onErrorResponse(ServerWebExchange exchange, int errorCode, String errorMsg) {
 		String errorcode = "{\"status\":" + "FAIL" + ","
@@ -145,33 +106,12 @@ public class UserFilter extends AbstractGatewayFilterFactory<Config> {
 		return exchange.getResponse().writeWith(Flux.just(buffer));
 	}
 
-	private int isJwtValid(String jwt, String pathId) {
+	private int isJwtValid(String jwt) {
 		String subject = null;
 
 		try {
-			// Jwts.parser().setSigningKey(env.getProperty("token.secret"))
-			// 	.parseClaimsJws(jwt).getBody();
-
 			subject = Jwts.parser().setSigningKey(env.getProperty("token.secret"))
 				.parseClaimsJws(jwt).getBody().getSubject();
-
-			System.out.println("==============");
-			System.out.println(pathId);
-			System.out.println(subject);
-			System.out.println("==============");
-
-
-			// 토큰을 복호화 얻은 ID = URL ID
-
-			// 토큰 만료 , 토큰 정상
-
-			if (!subject.equals(pathId)) {
-				System.out.println("아이디 낫 매치");
-				return 902;
-				//return onErrorResponse(exchange, 901, "No Authorization header");
-			}
-
-
 
 		} catch (ExpiredJwtException e) {
 			return 903;

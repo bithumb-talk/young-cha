@@ -4,6 +4,9 @@ import lombok.extern.slf4j.Slf4j;
 
 import org.springframework.cloud.gateway.filter.GatewayFilter;
 import org.springframework.cloud.gateway.filter.factory.AbstractGatewayFilterFactory;
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.server.reactive.ServerHttpRequest;
+import org.springframework.http.server.reactive.ServerHttpResponse;
 import org.springframework.stereotype.Component;
 
 import reactor.core.publisher.Mono;
@@ -18,8 +21,11 @@ public class GlobalFilter extends AbstractGatewayFilterFactory<Config> {
 	@Override
 	public GatewayFilter apply(final Config config) {
 		return (exchange, chain) -> {
+
 			log.info("GlobalFilter baseMessage: {}", config.getBaseMessage());
 			System.out.println("-------");
+
+			System.out.println("1");
 
 			if (config.isPreLogger()) {
 				log.info("GlobalFilter Start: {}", exchange.getRequest());
@@ -32,4 +38,6 @@ public class GlobalFilter extends AbstractGatewayFilterFactory<Config> {
 			}));
 		};
 	}
+
+
 }

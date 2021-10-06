@@ -33,7 +33,7 @@ dependencies {
 
     implementation group: 'javax.xml.bind', name: 'jaxb-api', version: '2.3.0-b170201.1204'
     implementation group: 'io.jsonwebtoken', name: 'jjwt-api', version: '0.11.2'
-    implementation group: 'org.springframework.cloud', name: 'spring-cloud-starter-netflix-eureka-client', version: '3.0.4'
+    //implementation group: 'org.springframework.cloud', name: 'spring-cloud-starter-netflix-eureka-client', version: '3.0.4'
 
     // 모니터링 서비스 (Micrometer, Prometheus, Grafana)
     //implementation group: 'io.micrometer', name: 'micrometer-registry-prometheus', version: '1.0.0-rc.1'
