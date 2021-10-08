@@ -18,6 +18,7 @@ import org.springframework.web.bind.annotation.*;
 import java.io.IOException;
 import java.util.List;
 
+//spring cloud에서 cors 설정
 //@CrossOrigin(origins = "*", allowCredentials = "false")
 @RequestMapping
 @RequiredArgsConstructor
