@@ -1,6 +1,6 @@
 # Spring Cloud Gateway port
 server:
-  port: 8080
+  port: 6030
 
 eureka:
   client:
@@ -8,9 +8,14 @@ eureka:
     fetch-registry: true
     service-url:
       defaultZone: http://3.38.23.41:8761/eureka
-
   instance:
     prefer-ip-address: true
+#    ip-address: 3.38.23.41
+#    hostname: bithumb
+
+#  instance:
+#    prefer-ip-address: true
+
 
 spring:
   cloud:
@@ -46,8 +51,7 @@ spring:
       # ID, 목적지(uri), 조건(Predicate), 필터로 구성된다.
       routes:
         - id: user-service
-          uri: http://3.38.23.41:6000
-#          uri: lb://USER
+          uri: lb://USER
           predicates:
             - Path=/users/**
           filters:
@@ -58,10 +62,9 @@ spring:
                 postLogger: true
 
         - id: auth-service
-          uri: http://3.38.23.41:6000
-#          uri: lb://USER
+#          uri: http://3.38.23.41:6000
+          uri: lb://USER
 #          uri: http://localhost:8081
-
           predicates:
             - Path=/auth/**
           filters:
@@ -148,8 +151,10 @@ spring:
 
 
 
+
   application:
-    name: API-GATEWAY
+    name: GATEWAY
 
 token:
   secret: c3ByaW5nLWJvb3Qtc2VjdXJpdHktand0LXR1dG9yaWFsLWppd29vbi1zcHJpbmctYm9vdC1zZWN1cml0eS1qd3QtdHV0b3JpYWwK
+

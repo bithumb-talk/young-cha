@@ -1,15 +1,11 @@
 version: "3.7"
 services:
   app:
+    network_mode: host
     build: .
     restart: always
     ports:
-      - "6020:8080"
-
-
-# docker network create --driver bridge bithumb-backend-net
-#networks:
-#  default:
-#    external:
-#      name: bithumb-backend-net
+      - "6030:6030"
+#    hostname: bithumb
+#    container_name: bithumb
 
