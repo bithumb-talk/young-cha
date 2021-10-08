@@ -2,6 +2,7 @@ plugins {
 	id 'org.springframework.boot' version '2.5.4'
 	id 'io.spring.dependency-management' version '1.0.11.RELEASE'
 	id 'java'
+//	id 'jacoco'
 }
 
 group = 'com.bithumb'
@@ -22,6 +23,7 @@ dependencies {
 	//jpa
 	implementation group: 'org.springframework.boot', name: 'spring-boot-starter-data-jpa', version: '2.5.4'
 	implementation 'org.springframework.boot:spring-boot-starter-hateoas'
+	implementation 'junit:junit:4.13.1'
 	runtimeOnly 'org.mariadb.jdbc:mariadb-java-client'
 	implementation 'org.springframework.data:spring-data-rest-hal-explorer'
 
@@ -29,7 +31,6 @@ dependencies {
 	implementation group: 'org.springframework.cloud', name: 'spring-cloud-starter-netflix-eureka-client', version: '3.0.4'
 	implementation group: 'org.springframework.cloud', name: 'spring-cloud-starter-aws', version: '2.2.6.RELEASE'
 	implementation 'io.springfox:springfox-boot-starter:3.0.0'
-	implementation 'org.springframework.boot:spring-boot-starter-web'
 
 	//mongdb
 //	implementation group: 'org.springframework.boot', name: 'spring-boot-starter-data-mongodb-reactive'
@@ -37,7 +38,7 @@ dependencies {
 //	implementation 'org.springframework.boot:spring-boot-starter-data-mongodb'
 //	implementation 'org.springframework.boot:spring-boot-starter-data-mongodb-reactive'
 
-	implementation 'org.springframework.boot:spring-boot-starter-webflux'
+	implementation 'org.springframework.boot:spring-boot-starter-web'
 	compileOnly 'org.projectlombok:lombok'
 	developmentOnly 'org.springframework.boot:spring-boot-devtools'
 	annotationProcessor 'org.projectlombok:lombok'
@@ -48,3 +49,16 @@ dependencies {
 test {
 	useJUnitPlatform()
 }
+
+//jacoco
+//jacoco {
+//	toolVersion = "0.8.7"
+//	reportsDirectory = layout.buildDirectory.dir('customJacocoReportDir')
+//}
+//jacocoTestReport {
+//	reports {
+//		xml.required = false
+//		csv.required = false
+//		html.outputLocation = layout.buildDirectory.dir('jacocoHtml')
+//	}
+//}
