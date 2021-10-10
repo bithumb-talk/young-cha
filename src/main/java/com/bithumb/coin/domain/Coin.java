@@ -1,13 +1,10 @@
 package com.bithumb.coin.domain;
 
-import lombok.Data;
-import lombok.EqualsAndHashCode;
-import lombok.RequiredArgsConstructor;
-import lombok.ToString;
+import lombok.*;
 
 @Data
-@RequiredArgsConstructor
-@EqualsAndHashCode @ToString
+@AllArgsConstructor @NoArgsConstructor
+@EqualsAndHashCode @ToString @Builder
 public class Coin {
     private String symbol;
     private String korean;

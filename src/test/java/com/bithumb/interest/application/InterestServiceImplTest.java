@@ -1,5 +1,6 @@
 package com.bithumb.interest.application;
 
+import com.bithumb.coin.domain.Coin;
 import com.bithumb.coin.service.CoinServiceImpl;
 import com.bithumb.interest.api.dto.InterestResponse;
 import com.bithumb.interest.domain.Interest;
@@ -24,15 +25,12 @@ import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 import org.springframework.test.context.web.WebAppConfiguration;
 
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.Optional;
+import java.util.*;
 
 @ExtendWith(MockitoExtension.class)
 class InterestServiceImplTest {
 
-    @InjectMocks
+    //@InjectMocks
     InterestServiceImpl interestService;
 
     @Mock
@@ -42,10 +40,14 @@ class InterestServiceImplTest {
 
     final Interest interest = Interest.builder()
             .userId(1)
+            .symbol("BTC")
+            .korean("비트코인")
+            .market("BTC_KRW")
             .build();
     final List<Interest> interests = Arrays.asList(interest);
 
     final InterestResponse interestResponse = InterestResponse.of(interest, 1);
+
     @BeforeEach
     void setUp() {
         this.interestService = new InterestServiceImpl(interestRepository, coinService);
@@ -54,20 +56,43 @@ class InterestServiceImplTest {
     @Test
     @DisplayName("관심코인 조회")
     void getInterests() {
-        given(interestRepository.findByUserId(any())).willReturn(interests);
+        //given
+        given(interestRepository.findByUserId(1)).willReturn(interests);
 
-        System.out.println(interestService.getInterests(1));
+        //when
+        List<InterestResponse> result = interestService.getInterests(1);
 
-//        assertThat(result.size(),is(1));
+        //dto
+        List<InterestResponse> response = List.of(
+                InterestResponse.of(interest,1)
+        );
+        //then
+        assertThat(result,is(response));
+
+
     }
 
     @Test
     @AutoConfigureTestDatabase
     void createInterest() throws IOException {
+        //dto
+        InterestResponse createDto = InterestResponse.of(interest,1);
+        Coin coin = Coin.builder()
+                .symbol("BTC")
+                .korean("비트코인")
+                .market("BTC_KRW")
+                .build();
 
-        InterestResponse interestResponse = interestService.createInterest(interest.getUserId(),interest.getSymbol());
+        HashMap<String, Coin> dto = new HashMap<>();
+        dto.put(coin.getSymbol(), coin);
+        given(coinService.getCoins()).willReturn(dto);
+        given(interestRepository.save(any())).willReturn(interest);
 
-        assertThat(interestResponse.getKorean(),is(equalTo("비트코인")));
+        //when
+        InterestResponse result = interestService.createInterest(1, "BTC");
+
+        //then
+        assertThat(result,is(createDto));
 
     }
 
