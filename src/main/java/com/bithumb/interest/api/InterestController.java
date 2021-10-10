@@ -1,14 +1,11 @@
 package com.bithumb.interest.api;
 
-import com.bithumb.coin.service.CoinService;
 import com.bithumb.common.response.ApiResponse;
-import com.bithumb.common.response.ErrorCode;
 import com.bithumb.common.response.StatusCode;
 import com.bithumb.common.response.SuccessCode;
 import com.bithumb.interest.api.dto.InterestRequest;
 import com.bithumb.interest.api.dto.InterestResponse;
 import com.bithumb.interest.application.InterestServiceImpl;
-import com.bithumb.interest.domain.Interest;
 import io.swagger.annotations.Api;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
