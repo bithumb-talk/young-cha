@@ -1,7 +1,7 @@
 package com.bithumb.interest.application;
 
-import com.bithumb.coin.domain.Coin;
-import com.bithumb.coin.service.CoinServiceImpl;
+import com.bithumb.utils.domain.Coin;
+import com.bithumb.utils.service.CoinServiceImpl;
 import com.bithumb.common.response.ErrorCode;
 import com.bithumb.interest.api.dto.InterestResponse;
 import com.bithumb.interest.domain.Interest;

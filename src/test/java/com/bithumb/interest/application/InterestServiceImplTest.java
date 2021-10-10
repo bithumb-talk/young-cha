@@ -1,28 +1,19 @@
 package com.bithumb.interest.application;
 
-import com.bithumb.coin.domain.Coin;
-import com.bithumb.coin.service.CoinServiceImpl;
+import com.bithumb.utils.domain.Coin;
+import com.bithumb.utils.service.CoinServiceImpl;
 import com.bithumb.interest.api.dto.InterestResponse;
 import com.bithumb.interest.domain.Interest;
 import com.bithumb.interest.repository.InterestRepository;
 import static org.hamcrest.MatcherAssert.*;
 import static org.hamcrest.Matchers.*;
-import static org.junit.jupiter.api.Assertions.*;
-import static org.mockito.ArgumentMatchers.*;
 import static org.mockito.BDDMockito.*;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
-import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
-import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
-import org.springframework.boot.test.autoconfigure.jdbc.AutoConfigureTestDatabase;
-import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
-import org.springframework.test.context.web.WebAppConfiguration;
 
 import java.io.IOException;
 import java.util.*;
@@ -73,7 +64,6 @@ class InterestServiceImplTest {
     }
 
     @Test
-    @AutoConfigureTestDatabase
     void createInterest() throws IOException {
         //dto
         InterestResponse createDto = InterestResponse.of(interest,1);
@@ -98,6 +88,8 @@ class InterestServiceImplTest {
 
     @Test
     void deleteInterest() {
-
+        given(interestRepository.existsInterestBySymbolAndUserId("BTC", 1)).willReturn(true);
+        interestService.deleteInterest("BTC",1);
+        then(interestRepository).should(times(1)).deleteInterestBySymbolAndUserId("BTC",1);
     }
 }
