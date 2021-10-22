@@ -154,39 +154,33 @@ YoungCha는 가상자산과 관련된 소식 및 이벤트를 쉽게 접할 수 
 
 ## 🎞 페이지 소개 🎞
 
-### ⚡ 실시간 차트 
-<!--
-<video src="https://user-images.githubusercontent.com/26533169/137586071-d86a91dd-bc1d-441f-a8a6-d6b6e4e93e63.mp4">
--->
-
-### ⚡ 관심코인 검색 및 등록
-
-<img src="https://user-images.githubusercontent.com/26533169/137585478-0fb3cfb2-6b2b-4b9b-aab1-02fbe30e0fe1.gif" alt="관심코인검색등록" width="250px">
-
- 
 
 ### ⚡ 커뮤니티 글 등록/수정
-
-![글등록_수정](readme.assets/137617922-67b7d65c-2aa4-4b0f-b65d-372fcb700fdd.gif)
+![글등록_수정](https://user-images.githubusercontent.com/26533169/138437884-311d2e10-32cc-4e53-b0e7-70aa4744756e.gif)
 
 
 
 ### ⚡ 댓글 등록
-
 ![댓글](https://user-images.githubusercontent.com/26533169/137586024-2fbdd90d-ee07-4fa2-b161-202dcf4d6b99.gif)
 
 
 
 ### ⚡ 마이페이지
-
 ![마이페이지](https://user-images.githubusercontent.com/26533169/137586039-d10929d7-e860-4165-914b-d0c9f3f4a60d.gif)
 
 
 
 ### ⚡ 회원가입
+![회원가입](https://user-images.githubusercontent.com/26533169/138438115-8fb480a6-e6ad-4b0e-883b-14184c83159d.gif)
 
-![회원가입](readme.assets/137586057-466590b6-f252-4bd0-8130-5cd12fecf0cc.gif)
+### ⚡ 관심코인 검색 및 등록
+<img src="https://user-images.githubusercontent.com/26533169/137585478-0fb3cfb2-6b2b-4b9b-aab1-02fbe30e0fe1.gif" alt="관심코인검색등록" width="250px">
 
+### ⚡ 실시간 차트 
+<video src="https://user-images.githubusercontent.com/26533169/137586071-d86a91dd-bc1d-441f-a8a6-d6b6e4e93e63.mp4">
+
+
+ 
 
 * Youngcha Service
 http://youngcha-front.s3-website.ap-northeast-2.amazonaws.com/
