@@ -8,6 +8,13 @@ YoungCha는 가상자산과 관련된 소식 및 이벤트를 쉽게 접할 수 
 
 - 팀명 **Youngcha** : 투자한 자산이 상승하기를 응원하는 의미로 YoungCha로 확정하였습니다.
 
+- Youngcha Service
+http://youngcha-front.s3-website.ap-northeast-2.amazonaws.com/
+
+- 노션
+https://bithumb-youngcha.notion.site/YoungCha-f5163b1f3b4245949f87c927ea11cfba
+
+- 발표자료
 
 
 ## 📆 프로젝트 기간 📆
@@ -154,21 +161,14 @@ YoungCha는 가상자산과 관련된 소식 및 이벤트를 쉽게 접할 수 
 
 ## 🎞 페이지 소개 🎞
 
-
 ### ⚡ 커뮤니티 글 등록/수정
 ![글등록_수정](https://user-images.githubusercontent.com/26533169/138437884-311d2e10-32cc-4e53-b0e7-70aa4744756e.gif)
-
-
 
 ### ⚡ 댓글 등록
 ![댓글](https://user-images.githubusercontent.com/26533169/137586024-2fbdd90d-ee07-4fa2-b161-202dcf4d6b99.gif)
 
-
-
 ### ⚡ 마이페이지
 ![마이페이지](https://user-images.githubusercontent.com/26533169/137586039-d10929d7-e860-4165-914b-d0c9f3f4a60d.gif)
-
-
 
 ### ⚡ 회원가입
 ![회원가입](https://user-images.githubusercontent.com/26533169/138438115-8fb480a6-e6ad-4b0e-883b-14184c83159d.gif)
@@ -180,15 +180,4 @@ YoungCha는 가상자산과 관련된 소식 및 이벤트를 쉽게 접할 수 
 <video src="https://user-images.githubusercontent.com/26533169/137586071-d86a91dd-bc1d-441f-a8a6-d6b6e4e93e63.mp4">
 
 
- 
 
-* Youngcha Service
-http://youngcha-front.s3-website.ap-northeast-2.amazonaws.com/
-
-
-* 노션
-https://www.notion.so/bithumb-youngcha/2645a3ea916d41ec84f08eff0082a8ec
-
-
-* 발표자료
-https://docs.google.com/presentation/d/1rxOm8Mib4eTJBlyKLhodtNrPv5K_6rRsL6vdKlxbGow/edit#slide=id.gee71a05c23_1_108
