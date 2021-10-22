@@ -155,9 +155,9 @@ YoungCha는 가상자산과 관련된 소식 및 이벤트를 쉽게 접할 수 
 ## 🎞 페이지 소개 🎞
 
 ### ⚡ 실시간 차트 
-
+<!--
 <video src="https://user-images.githubusercontent.com/26533169/137586071-d86a91dd-bc1d-441f-a8a6-d6b6e4e93e63.mp4">
-
+-->
 
 ### ⚡ 관심코인 검색 및 등록
 
