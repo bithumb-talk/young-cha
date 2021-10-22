@@ -15,6 +15,7 @@ http://youngcha-front.s3-website.ap-northeast-2.amazonaws.com/
 https://bithumb-youngcha.notion.site/YoungCha-f5163b1f3b4245949f87c927ea11cfba
 
 - 발표자료
+https://github.com/bithumb-talk/young-cha/blob/develop/%EA%B2%B0%EA%B3%BC%EB%B0%9C%ED%91%9C_1013.pdf
 
 
 ## 📆 프로젝트 기간 📆
