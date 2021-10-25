@@ -49,17 +49,17 @@ https://github.com/bithumb-talk/young-cha/blob/develop/%EA%B2%B0%EA%B3%BC%EB%B0%
             <strong>프론트</strong>
         </td>
         <td align="center" width="130px" height="160px">
-            <a href="https://github.com/ap4o"><img height="100px" width="100px" src="https://avatars.githubusercontent.com/kimjanghu" /></a>
+            <a href="https://github.com/kimjanghu"><img height="100px" width="100px" src="https://avatars.githubusercontent.com/kimjanghu" /></a>
             <br />
             <a href="https://github.com/kimjanghu">김장후</a>
         </td>
         <td align="center" width="130px" height="160px">
-            <a href="https://github.com/thalals"><img height="100px" width="100px" src="https://avatars.githubusercontent.com/bongsuyeon" /></a>
+            <a href="https://github.com/bongsuyeon"><img height="100px" width="100px" src="https://avatars.githubusercontent.com/bongsuyeon" /></a>
             <br />
             <a href="https://github.com/bongsuyeon">봉수연</a>
         </td>
         <td align="center" width="130px" height="160px">
-            <a href="https://github.com/thalals"><img height="100px" width="100px" src="https://avatars.githubusercontent.com/loseel" /></a>
+            <a href="https://github.com/loseel"><img height="100px" width="100px" src="https://avatars.githubusercontent.com/loseel" /></a>
             <br />
             <a href="https://github.com/loseel">이솔</a>
         </td>
@@ -69,17 +69,17 @@ https://github.com/bithumb-talk/young-cha/blob/develop/%EA%B2%B0%EA%B3%BC%EB%B0%
             <strong>백엔드</strong>
         </td>
         <td align="center" width="130px" height="160px">
-            <a href="https://github.com/ap4o"><img height="100px" width="100px" src="https://avatars.githubusercontent.com/jeonjonghyeok" /></a>
+            <a href="https://github.com/jeonjonghyeok"><img height="100px" width="100px" src="https://avatars.githubusercontent.com/jeonjonghyeok" /></a>
             <br />
             <a href="https://github.com/jeonjonghyeok">전종혁</a>
         </td>
         <td align="center" width="130px" height="160px">
-            <a href="https://github.com/thalals"><img height="100px" width="100px" src="https://avatars.githubusercontent.com/MinjiY" /></a>
+            <a href="https://github.com/MinjiY"><img height="100px" width="100px" src="https://avatars.githubusercontent.com/MinjiY" /></a>
             <br />
             <a href="https://github.com/MinjiY">유민지</a>
         </td>
         <td align="center" width="130px" height="160px">
-            <a href="https://github.com/thalals"><img height="100px" width="100px" src="https://avatars.githubusercontent.com/Maestro6788" /></a>
+            <a href="https://github.com/Maestro6788"><img height="100px" width="100px" src="https://avatars.githubusercontent.com/Maestro6788" /></a>
             <br />
             <a href="https://github.com/Maestro6788">진은수</a>
         </td>
